@@ -11,10 +11,14 @@ public class Main {
             for (int j = 1; j <= i; j++) {
                 System.out.print((char) (asciiConverter + 64));
                 asciiConverter++;
+                if (asciiConverter > 26) {
+                    asciiConverter = 1;
+                }
             }
             System.out.println();
         }
 
         sc.close();
+
     }
 }
