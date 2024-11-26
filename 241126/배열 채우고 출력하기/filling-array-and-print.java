@@ -4,15 +4,13 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        String[] arr = new String[10];
+        StringBuilder sb = new StringBuilder();
 
-        String line = sc.nextLine();
-
-        arr = line.split(" ");
-
-        for (int i = 9; i >= 0; i--) {
-            System.out.print(arr[i]);
+        for (int i = 0; i < 10; i++) {
+            sb.append(sc.next().charAt(0));
         }
+
+        System.out.print(sb.reverse());
 
         sc.close();
     }
