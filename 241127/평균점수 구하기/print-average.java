@@ -13,7 +13,7 @@ public class Main {
             sum += grades[i];
         }
 
-        avg = sum / grades.length;
+        avg = Math.round(sum / grades.length * 10.0) / 10.0;
 
         System.out.print(avg);
 
