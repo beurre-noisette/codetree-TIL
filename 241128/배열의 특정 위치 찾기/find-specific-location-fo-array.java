@@ -21,7 +21,7 @@ public class Main {
             sumEven += arr[i];
         }
 
-        mulThree = (double) sumEven / 3;
+        mulThree = Math.round((double) sumEven / 3 * 10) / 10.0;
 
         System.out.print(sumOdd + " " + mulThree);
 
