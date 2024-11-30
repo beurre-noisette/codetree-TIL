@@ -9,11 +9,7 @@ public class Main {
         int cnt = 0;
 
         while (true) {
-            System.out.print((multiplicand * multiplier) + " ");
-
-            multiplier++;
-
-            if (multiplier % 5 == 0) {
+            if (multiplicand * multiplier % 5 == 0) {
                 cnt++;
             }
 
@@ -21,6 +17,10 @@ public class Main {
                 System.out.print((multiplicand * multiplier) + " ");
                 break;
             }
+
+            System.out.print((multiplicand * multiplier) + " ");
+
+            multiplier++;
         }
 
         sc.close();
