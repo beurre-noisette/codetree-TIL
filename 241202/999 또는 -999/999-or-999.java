@@ -20,7 +20,7 @@ public class Main {
         int minVal = arr[0];
 
         for (int i = 1; i < arr.length; i++) {
-            if (arr[i] != 999 && arr[i] != -999) {
+            if (arr[i] != 999 && arr[i] != -999 && arr[i] != 0) {
                 if (maxVal < arr[i]) {
                     maxVal = arr[i];
                 }
@@ -28,7 +28,7 @@ public class Main {
         }
         
         for (int i = 1; i < arr.length; i++) {
-            if (arr[i] != 999 && arr[i] != -999) {
+            if (arr[i] != 999 && arr[i] != -999 && arr[i] != 0) {
                 if (minVal > arr[i]) {
                     minVal = arr[i];
                 }
