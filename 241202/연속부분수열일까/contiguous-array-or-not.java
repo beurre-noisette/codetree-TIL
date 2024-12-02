@@ -7,36 +7,36 @@ public class Main {
         int n1 = sc.nextInt();
         int n2 = sc.nextInt();
 
-        StringBuilder arrA = new StringBuilder();
-        StringBuilder arrB = new StringBuilder();
-        String result = null;
+        int[] arrA = new int[n1];
+        int[] arrB = new int[n2];
 
-        for (int i = 0; i < n1; i++) {
-            arrA.append(sc.next());
+        for (int i = 0; i < arrA.length; i++) {
+            arrA[i] = sc.nextInt();
         }
 
-        for (int i = 0; i < n2; i++) {
-            arrB.append(sc.next());
+        for (int i = 0; i < arrB.length; i++) {
+            arrB[i] = sc.nextInt();
         }
-    
-        while (true) {
-            if (arrA.charAt(0) != arrB.charAt(0)) {
-                arrA.deleteCharAt(0);
-            } else {
+
+        boolean found = false;
+
+        for (int i = 0; i <= n1 - n2; i++) {
+            boolean match = true;
+
+            for (int j = 0; j < n2; j++) {
+                if (arrA[i + j] != arrB[j]) {
+                    match = false;
+                    break;
+                }
+            }
+
+            if (match) {
+                found = true;
                 break;
             }
         }
 
-        for (int i = 0; i < arrB.length(); i++) {
-            if (arrA.charAt(i) == arrB.charAt(i)) {
-                result = "Yes";
-            } else {
-                result = "No";
-                break;
-            }
-        }
-
-        System.out.println(result);
+        System.out.println(found ? "Yes" : "No");
 
         sc.close();
     }
