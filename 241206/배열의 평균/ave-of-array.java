@@ -43,7 +43,7 @@ public class Main {
             }
         }
 
-        avgTotal = sumTotal / 8;
+        avgTotal = Math.round((sumTotal / 8) * 10) / 10.0;
 
         for (int i = 0; i < avgRow.length; i++) {
             System.out.print(avgRow[i] + " ");
