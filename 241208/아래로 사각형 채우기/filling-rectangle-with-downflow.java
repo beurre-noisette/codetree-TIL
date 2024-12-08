@@ -10,7 +10,7 @@ public class Main {
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                arr2d[i][j] = (1 + i) + (j * n);
+                arr2d[j][i] = num++;
             }
         }
 
