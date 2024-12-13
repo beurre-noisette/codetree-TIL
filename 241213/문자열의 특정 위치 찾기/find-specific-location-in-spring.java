@@ -7,7 +7,11 @@ public class Main {
         String str1 = sc.next();
         String str2 = sc.next();
 
-        System.out.print(str1.indexOf(str2));
+        if (str1.indexOf(str2) == -1) {
+            System.out.print("No");
+        } else {
+            System.out.print(str1.indexOf(str2));
+        }
 
         sc.close();
     }
