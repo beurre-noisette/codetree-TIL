@@ -23,16 +23,23 @@ public class Main {
     }
 
     private static boolean isIt(int[] a, int[] b) {
-        for (int i = 0; i < a.length; i++) {
+        if (b.length > a.length) {
+            return false;
+        }
+
+        for (int i = 0; i <= a.length - b.length; i++) {
+            boolean found = true;
+
             for (int j = 0; j < b.length; j++) {
-                if (a[i] == b[j]) {
-                    continue;
-                } else {
+                if (a[i + j] != b[j]) {
+                    found = false;
                     break;
                 }
             }
 
-            return true;
+            if (found) {
+                return true;
+            }
         }
 
         return false;
