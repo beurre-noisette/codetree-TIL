@@ -12,19 +12,7 @@ public class Main {
     }
 
     private static boolean hasAnotherTwo(String s) {
-        int cnt = 0;
-
-        for (int i = 0; i < s.length() - 1; i++) {
-            if (cnt >= 2) {
-                return true;
-            }
-
-            if (s.charAt(i) != s.charAt(i + 1)) {
-                cnt++;
-            }
-        }
-
-        return false;
+        return s.chars().distinct().count() >= 2;
     }
 }
 
