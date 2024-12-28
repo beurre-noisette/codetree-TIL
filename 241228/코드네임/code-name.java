@@ -36,7 +36,7 @@ class Agent {
 
     }
 
-    Agent(char codeName, int grade) {
+    public Agent(char codeName, int grade) {
         this.codeName = codeName;
         this.grade = grade;
     }
