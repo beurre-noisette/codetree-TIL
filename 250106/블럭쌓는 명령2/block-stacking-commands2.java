@@ -10,12 +10,14 @@ public class Main {
 
         int[] blocks = new int[n];
 
-        for (int i = 1; i <= k; i++) {
-            int a = sc.nextInt();
-            int b = sc.nextInt();
+        for (int i = 0; i < k; i++) {
+            int a = sc.nextInt() - 1;
+            int b = sc.nextInt() - 1;
 
-            for (int j = a; j <= b; j++) {
-                blocks[j] += 1;
+            if (a >= 0 && b < n) {
+                for (int j = a; j <= b; j++) {
+                    blocks[j]++;
+                }
             }
         }
 
