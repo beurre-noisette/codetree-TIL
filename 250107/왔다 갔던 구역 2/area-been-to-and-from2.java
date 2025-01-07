@@ -1,46 +1,42 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        int currentPos = 500;
-        int[] path = new int[1000];
-
-        int n = sc.nextInt();
-        sc.nextLine();
-
+        Scanner scanner = new Scanner(System.in);
+        
+        int n = scanner.nextInt();
+        scanner.nextLine();
+        
+        int[] path = new int[2001];
+        int offset = 1000;
+        
+        int currentPos = offset;
+        
         for (int i = 0; i < n; i++) {
-            String[] command = sc.nextLine().split(" ");
+            String[] command = scanner.nextLine().split(" ");
             int distance = Integer.parseInt(command[0]);
-            char direction = command[1].charAt(0);
-
-            if (direction == 'L') {
-                for (int j = 1; j <= distance; j++) {
-                    path[currentPos - j]++;
-                }
-                currentPos -= distance;
-            } else {
-                for (int j = 1; j <= distance; j++) {
-                    path[currentPos + j]++;
-                }
-                currentPos += distance;
+            String direction = command[1];
+            
+            int nextPos = currentPos + (direction.equals("R") ? distance : -distance);
+            
+            int start = Math.min(currentPos, nextPos);
+            int end = Math.max(currentPos, nextPos);
+            
+            for (int j = start; j < end; j++) {
+                path[j]++;
+            }
+            
+            currentPos = nextPos;
+        }
+        
+        int count = 0;
+        for (int i = 0; i < path.length; i++) {
+            if (path[i] >= 2) {
+                count++;
             }
         }
-
-        int result = 0;
-        for(int count : path) {
-            if (count >= 2) { result ++; }
-        }
-
-        System.out.println(result);
-        sc.close();
+        
+        System.out.println(count);
+        scanner.close();
     }
 }
-
-/*
-(1) 위치 0에서 시작하여 n번의 명령에 걸쳐 움직인 뒤,
-(2) 2번 이상 지나간 영역의 크기를 출력하는 프로그램을 작성
-(3) x L, x R 형태로 명령이 주어짐
-(4) 1<= n <= 100 | 1 <= x <= 10
-*/
