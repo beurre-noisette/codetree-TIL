@@ -42,15 +42,17 @@ public class Main {
             }
         }
         
+        if (minX == 2001 || minY == 2001) {
+            System.out.print(0);
+        } else {
+            int width = maxX - minX + 1;
+            int height = maxY - minY + 1;
+            System.out.print(width * height);
         
-        int width = maxX - minX + 1;
-        int height = maxY - minY + 1;
-        
-        System.out.print(width * height);
-    
         
         sc.close();
     }
+}
 }
 
 /*
