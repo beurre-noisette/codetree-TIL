@@ -15,11 +15,13 @@ public class Main {
         int maxCnt = 0;
 
         for (int i = 0; i < arr.length; i++) {
-            if (i == 0 || arr[i] != arr[i - 1]) {
+            if (i == 0 || arr[i] == arr[i - 1]) {
                 cnt++;
                 if (cnt > maxCnt) {
                     maxCnt = cnt;
                 }
+            } else if (arr[i] != arr[i - 1]) {
+                cnt = 0;
             }
         }
 
