@@ -11,27 +11,19 @@ public class Main {
             arr[i] = sc.nextInt();
         }
 
-        int positive = 0;
-        int negative = 0;
+        int cnt = 1;
+        int maxCnt = 1;
 
-        if (arr[0] > 0) {
-            positive++;
-        } else {
-            negative++;
-        }
-
-        for (int i = 1; i < arr.length; i++) {
-            if (arr[i] > 0 && arr[i - 1] > 0) {
-                positive++;
-            }
-
-            if (arr[i] < 0 && arr[i - 1] < 0) {
-                negative++;
+        for (int i = 1; i < n; i++) {
+            if ((arr[i] > 0 && arr[i-1] > 0) || (arr[i] < 0 && arr[i-1] < 0)) {
+                cnt++;
+                maxCnt = Math.max(maxCnt, cnt);
+            } else {
+                cnt = 1;
             }
         }
 
-        System.out.println(positive > negative ? positive + 1 : negative + 1);
-
+        System.out.println(maxCnt);
         sc.close();
     }
 }
