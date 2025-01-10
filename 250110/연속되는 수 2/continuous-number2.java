@@ -21,7 +21,7 @@ public class Main {
                     maxCnt = cnt;
                 }
             } else if (arr[i] != arr[i - 1]) {
-                cnt = 0;
+                cnt = 1;
             }
         }
 
