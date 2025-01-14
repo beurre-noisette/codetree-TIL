@@ -22,32 +22,7 @@ public class Main {
             robotB[i][0] = Integer.parseInt(st.nextToken());
             robotB[i][1] = st.nextToken().equals("R") ? 1 : -1;
         }
-import java.io.*;
-import java.util.*;
-
-public class Main {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
         
-        int n = Integer.parseInt(st.nextToken());
-        int m = Integer.parseInt(st.nextToken());
-
-
-테스트케이스
-
-
-결과
-
-
-코드 실행
-
-
-제출 및 채점
-
-
-
-
         int totalTimeA = 0;
         int totalTimeB = 0;
         for(int i = 0; i < n; i++) totalTimeA += robotA[i][0];
